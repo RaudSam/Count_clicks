@@ -5,9 +5,6 @@ from dotenv import load_dotenv
 from urllib.parse import urlparse
 
 
-load_dotenv()
-
-
 def create_parser():
     parser = argparse.ArgumentParser()
     parser.add_argument('url', help='Введите url')
@@ -46,6 +43,7 @@ def count_clicks(token, url):
 
 
 def main():
+    load_dotenv()
     token = os.getenv("VK_TOKEN")
     url = create_parser()
     try:
